@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+   <TITLE>JPACS - T&oacute;picos de Ajuda - Iniciando </TITLE>
+</HEAD>
+<BODY>
+<FONT SIZE=+2>Iniciando o Simulador</FONT>
+
+<P><B><FONT SIZE=+1>&nbsp;O que &eacute; o Simulador?</FONT></B>
+<BR>O JPACS (Java Processor and Cache Simulator) &eacute; um programa que simula a mem&oacute;ria cache
+de um computador. O pr&oacute;prio JPACS possui uma mem&oacute;ria
+ram, e um processador virtuais para auxiliar na simula&ccedil;&atilde;o
+do cache.
+
+<P><B><FONT SIZE=+1>&nbsp;Menu do JPACS</FONT></B>
+<BR>O Menu do simulador possui v&aacute;rias op&ccedil;&otilde;es que
+podem chegar a confundir o usu&aacute;rio, para evitar este problema vamos
+descrever com detalhes o que cada op&ccedil;&atilde;o do menu faz:
+
+<P>&nbsp;<B>Arquivo:</B>
+<BR><FONT COLOR="#000000">&nbsp;</FONT>&nbsp;&nbsp;&nbsp;&nbsp; <U>Novo
+</U> - cria novo arquivo de Acesso direto ou Assembly. Para saber os comandos
+Assembly v&aacute; ao t&oacute;pico <A HREF="Assembly.html">Utilizando
+o Assembly.</A>
+<BR><FONT COLOR="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Abrir</U>
+- abre arquivo escolhido em nova janela. Aten&ccedil;&atilde;o: O Simulador
+diferencia arquivos de Acesso direto e Assembly simplesmente pela extens�o
+do arquivo.</FONT>
+<BR><FONT COLOR="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Salvar</U>
+- salva janela ativa para arquivo. Se todas janelas de Acesso Direto e
+Assembly estiverem inativas, o programa ir&aacute; salvar uma delas. 
+Aten&ccedil;&atilde;o: Por favor coloque sempre a extens&atilde;o 
+no nome do arquivo para o bom funcionamento do programa.</FONT>
+<BR><FONT COLOR="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Sair</U>
+- sa�da do simulador.</FONT>
+
+<P>&nbsp;<B>Simula&ccedil;&atilde;o:</B>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Rel&acirc;mpago</U> - simula a janela
+de Acesso Direto Ativa ou inicia o processador caso janela de Acesso
+Direto n&atilde;o exista ou estaja inativa. Esta simula&ccedil;&atilde;o
+apenas exibe os resultados quando acabar a simula&ccedil;&atilde;o.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Passo a Passo</U> - simula a janela
+de Acesso Direto Ativa ou inicia o processador caso janela de Acesso
+Direto n&atilde;o exista ou estaja inativa. Esta simula&ccedil;&atilde;o
+simula uma instru&ccedil;&atilde;o de Assembly (ou uma linha de Acesso
+Direto) por vez.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Salvar Relat&oacute;rio</U> - salva o conte&uacute;do
+da janela Relat&oacute;rio de Simula&ccedil;&atilde;o no arquivo escolhido. Pode ser salvo tanto
+em formato Texto quanto em Xml. Aten&ccedil;&atilde;o: Por favor coloque sempre a extens&atilde;o 
+no nome do arquivo para o bom funcionamento do programa.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Limpar</U> -
+Limpa todos os componentes do simulador para que uma nova simula��o possa ser feita.
+
+<P>&nbsp;<b>Configura��es:</b>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Mem�rias</U> - configura a mem�ria 
+principal e cache. Pode-se configurar o tamanho, tempo de acesso, entre outras 
+op��es.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Internacional</U> - configura o idioma do 
+JPACS.<P>&nbsp;<b>Janela:</b>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Mem�ria Principal</U> - exibe ou oculta a 
+janela contendo a mem�ria principal.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Mem�ria Cache</U> - exibe ou oculta a janela 
+contendo a mem�ria cache.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Processador</U> - exibe ou oculta a janela 
+contendo as informa��es do processador.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Relat�rio de Simula��o</u> - exibe ou oculta a 
+janela contendo o relat�rio de simula��o.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Outras Janelas</u> - ser�o criados menus para 
+cada janela de assembly e acesso direto que o simulador estiver exibindo.<br>
+<br>
+&nbsp;<B>Ajuda:</B>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>T&oacute;picos de Ajuda</U> - ajuda do simulador.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Comandos Assembly</U> - janela
+para r&aacute;pida consulta dos comandos Assembly.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <U>Sobre</U> - os desenvolvedores desse software.
+<BR>&nbsp;
+
+<P><B><FONT SIZE=+1>&nbsp;Acesso Direto</FONT></B>
+<BR><FONT COLOR="#000000">Um objeto de Acesso Direto &eacute; bastante simples.
+Voc&ecirc; deve escrever a posic&atilde;o de mem&oacute;ria a ser
+acessada, um espa&ccedil;o e uma das letras <U>l</U> ou <U>e</U> (leitura
+ou escrita, caso outra letra seja especificada, o simulador ir� realizar uma
+leitura). Exemplo:</FONT>
+
+<P><FONT COLOR="#000000">100 e</FONT>
+<BR><FONT COLOR="#000000">200 e</FONT>
+<BR><FONT COLOR="#000000">300 l</FONT>
+<BR><FONT COLOR="#000000">100 l</FONT>
+
+<P><A HREF="index.html">VOLTAR</A>
+<BR>&nbsp;
+</BODY>
+</HTML>

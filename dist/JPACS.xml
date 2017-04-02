@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE JPACS SYSTEM "JPACS.dtd">
+
+<JPACS>
+   <config nome="JPACS.xml">
+	   <memoria>
+		   <principal tamanho="1024" tempoacesso="100" />
+		   <cache tamanho="5" tempoacesso="15" tamanhobloco="8">
+                <fifo /> <paralelo /> <writethrought />
+		    </cache>
+    	 </memoria>
+   </config>
+</JPACS>

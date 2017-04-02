@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+   <TITLE>JPACS - T&oacute;picos de Ajuda - Assembly</TITLE>
+</HEAD>
+<BODY>
+<FONT SIZE=+2>Utilizando o Assembly</FONT>
+
+<P><B><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; Assembly e Processador do JPACS</FONT></B>
+<BR>&nbsp; O JPACS possui um Assembly pr&oacute;prio  reconhecido apenas 
+pelo processador virtual desse simulador de cache. As Instru&ccedil;&otilde;es a serem compiladas
+se transformam em c&oacute;digos n&uacute;mericos (byte-codes) que o Processador
+reconhe&ccedil;a. Ao compilar um c&oacute;digo Assembly os comandos
+n&atilde;o reconhecidos pelo compilador ser&atilde;o transformados na instru&ccedil;&atilde;o
+Nop. J&aacute; no processo de execu&ccedil;&atilde;o qualquer c&oacute;digo
+n&atilde;o reconhecido pelo Processador ser&aacute; interpretado como
+Halt.
+<BR>&nbsp; O Processador &eacute; um processador bastante simples (basedo no processador Intel&reg; 8085) com poucas instru&ccedil;&otilde;es. Ele n&atilde;o possue pipeline e pega uma c&eacute;lula de mem&oacute;ria por vez. Suas instru&ccedil;&otilde;es possuem tamanho variado  sendo que a menor instru&ccedil;&atilde;o ocupa 1 e a maior ocupa 3 c&eacute;lulas de mem&oacute;ria. A Mem&oacute;ria Principal do Processador n&atilde;o possue  pagina&ccedil;&atilde;o, sendo simplesmente uma mem&oacute;ria ram virtual integrada com uma mem&oacute;ria cache completamente associativa.
+<BR>&nbsp; O Processador possui 26 registradores dispon&iacute;veis:
+A, B, C, D, E, F, G, H... Z e seus respectivos c&oacute;digos s&atilde;o
+1, 2, 3, 4, 5, 6, 7, 8... 26.
+<BR>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp; <B><FONT SIZE=+1>Lista de Instru&ccedil;&otilde;es</FONT></B>
+<BR><B>&nbsp; </B>Main END - Coloca o PC (Program Counter) na posi&ccedil;&atilde;o END.
+<BR>&nbsp; Prog END - Grava os c&oacute;digos subsequentes a partir da posi&ccedil;&atilde;o
+END.
+<BR>&nbsp; Mov REG1,REG2 - Copia conte&uacute;do do registrador REG2 para
+REG1.
+<BR>&nbsp; Mvi REG, XX - Coloca dado XX no registrador REG.
+<BR>&nbsp; Inc REG - Incrementa REG.
+<BR>&nbsp; Dec REG - Decrementa REG.
+<BR>&nbsp; Add REG1, REG2 - Soma REG1 com REG2 colocando resultado em REG1.
+<BR>&nbsp; Sub REG1, REG2 - Subtrai REG2 de REG1 colocando resultado em
+REG1.
+<BR>&nbsp; Or REG1, REG2 - Or l&oacute;gico entre REG1 e REG2 colocando
+resultado em REG1.
+<BR>&nbsp; And REG1, REG2 - And l&oacute;gico entre REG1 e REG2 colocando
+resultado em REG2.
+<BR>&nbsp; Cmp REG1, REG2 - Compara REG1 com REG2, se forem iguais o FLAG
+de Zero ser&aacute; ativado.
+<BR>&nbsp; Ldi REG, END - Carrega REG com cote&uacute;do da posi&ccedil;&atilde;o
+END.
+<BR>&nbsp; Sti REG, END - Carrega posi&ccedil;&atilde;o de mem&oacute;ria
+END com o conte&uacute;do de REG.
+<BR>&nbsp; Ldr REG1, REG2 - Carrega REG1 com cote&uacute;do da posi&ccedil;&atilde;o
+apontada por REG2.
+<BR>&nbsp; Str REG1, REG2 - Carrega posi&ccedil;&atilde;o de mem&oacute;ria apontada por
+REG2 com o conte&uacute;do de REG1.
+<BR>&nbsp; Jmp END - Jumper incondicional para posi&ccedil;&atilde;o END.
+<BR>&nbsp; Jnz END - Jumper para posi&ccedil;&atilde;o END se o Flag de
+Zero n&atilde;o estiver ativado.
+<BR>&nbsp; Jz END - Jumper para posi&ccedil;&atilde;o END se o Flag de
+Zero estiver ativado.
+<BR>&nbsp; Call END - Chama subprograma na posi&ccedil;&atilde;o END.
+<BR>&nbsp; Ret - Retorna a &uacute;ltima chamada do CALL.
+<BR>&nbsp; Push REG - Guarda REG na pilha.
+<BR>&nbsp; Pop REG - Pega &uacute;ltimo elemento da pilha o coloca em REG.
+<BR>&nbsp; Nop - Nada.
+<BR>&nbsp; Halt - Finaliza o c&oacute;digo, para o processador.
+
+<P>&nbsp;&nbsp;&nbsp; <B><FONT SIZE=+1>Byte Codes</FONT></B>
+<BR>&nbsp;<B> </B>Main - N&atilde;o &eacute; comando, ele apenas seta o
+PC (Program Counter) para a posi&ccedil;&atilde;o desejada
+<BR>&nbsp; Prog&nbsp; - N&atilde;o &eacute; comando, ele apenas passa a
+gravar as instru&ccedil;&otilde;es subsequentes a partir da posi&ccedil;&atilde;o
+escolhida
+<BR>&nbsp; Mov&nbsp; - 1, C&oacute;digo de Reg1, C&oacute;digo Reg2
+<BR>&nbsp; Mvi&nbsp; - 2, C&oacute;digo de Reg2, Dado
+<BR>&nbsp; Inc&nbsp; - 3, C&oacute;digo do Reg
+<BR>&nbsp; Dec&nbsp; - 4, C&oacute;digo do Reg
+<BR>&nbsp; Add - 5,C&oacute;digo de Reg1, C&oacute;digo Reg2
+<BR>&nbsp; Sub - 6, C&oacute;digo de Reg1, C&oacute;digo Reg2
+<BR>&nbsp; Or - 7, C&oacute;digo de Reg1, C&oacute;digo Reg2
+<BR>&nbsp; And - 8, C&oacute;digo de Reg1, C&oacute;digo Reg2
+<BR>&nbsp; Cmp - 9, C&oacute;digo de Reg1, C&oacute;digo Reg2
+<BR>&nbsp; Ldi - 10, C&oacute;digo de Reg, Endere&ccedil;o
+<BR>&nbsp; Sti - 11, C&oacute;digo de Reg, Endere&ccedil;o
+<BR>&nbsp; Ldr - 20, C&oacute;digo de Reg1, C&oacute;digo de Reg2
+<BR>&nbsp; Str - 19, C&oacute;digo de Reg1, C&oacute;digo de Reg2
+<BR>&nbsp; Jmp - 12, C&oacute;digo de Jmp 0, Endere&ccedil;o
+<BR>&nbsp; Jnz - 12, C&oacute;digo de Jnz 1, Endere&ccedil;o
+<BR>&nbsp; Jz - 12, C&oacute;digo de Jz, Endere&ccedil;o
+<BR>&nbsp; Nop - 13
+<BR>&nbsp; Call - 14, Endere&ccedil;o
+<BR>&nbsp; Ret - 15
+<BR>&nbsp; Push - 16
+<BR>&nbsp; Pop - 17
+<BR>&nbsp; Halt - 18
+
+<P>&nbsp;&nbsp;&nbsp; <B><FONT SIZE=+1>Compilando um C&oacute;digo</FONT></B>
+<BR>&nbsp; Para compilar um c&oacute;digo assembly clicar no bot�o "Compilar Codigo"
+da janela desejada. Vale lembrar que ao se compilar um c&oacute;digo a Mem&oacute;ria Principal
+n&atilde;o ser&aacute; refeita mas sobreescrita, isto &eacute; &uacute;til quando se usa sobrotinas.
+
+<P>&nbsp;&nbsp;&nbsp; <B><FONT SIZE=+1>Como Executar meu C&oacute;digo</FONT></B>
+<BR>&nbsp; Ap&oacute;s compilar seu c&oacute;digo basta escolher no menu
+Simula&ccedil;&atilde;o, a op&ccedil;&atilde;o Rel&acirc;mpago ou Passo
+a Passo, ou clicar nos bot�es correspondentes na barra de ferramentas.
+<BR>&nbsp;
+<BR><A HREF="index.html">VOLTAR</A>
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+</BODY>
+</HTML>

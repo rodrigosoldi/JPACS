@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT JPACS (config,relatorio*)>
+
+<!ELEMENT config (memoria)>
+<!ATTLIST config
+        nome CDATA #IMPLIED>
+
+<!ELEMENT memoria (principal,cache)>
+
+<!ELEMENT principal EMPTY>
+<!ATTLIST principal
+        tamanho CDATA #REQUIRED
+	tempoacesso CDATA #REQUIRED>
+
+<!ELEMENT cache ((lru|fifo),(sequencial|paralelo),(copyback|writethrought))>
+<!ATTLIST cache
+        tamanho CDATA #REQUIRED
+	tempoacesso CDATA #REQUIRED
+	tamanhobloco CDATA #REQUIRED>
+
+<!ELEMENT lru EMPTY>
+<!ELEMENT fifo EMPTY>
+<!ELEMENT sequencial EMPTY>
+<!ELEMENT paralelo EMPTY>
+<!ELEMENT copyback EMPTY>
+<!ELEMENT writethrought EMPTY>
+
+<!ELEMENT relatorio (acesso*,estatisticas)>
+<!ATTLIST relatorio
+	nome CDATA #IMPLIED>
+
+<!ELEMENT acesso EMPTY>
+<!ATTLIST acesso 
+	numero CDATA #REQUIRED
+	posicao CDATA #REQUIRED
+	natureza (leitura|gravacao) #REQUIRED
+	bloco CDATA #REQUIRED
+	tempo CDATA #REQUIRED
+	resultado (erro|acerto) #REQUIRED
+	subs CDATA #IMPLIED>
+
+<!ELEMENT estastisticas (principal,cache,total)>
+
+<!ELEMENT memprincipal EMPTY>
+<!ATTLIST memprincipal
+	acessos CDATA #REQUIRED
+	tempoacesso CDATA #REQUIRED
+	tempototal CDATA #REQUIRED>
+
+<!ELEMENT memcache EMPTY>
+<!ATTLIST memcache
+	acessos CDATA #REQUIRED
+	tempoacesso CDATA #REQUIRED
+	tempototal CDATA #REQUIRED
+	taxaacerto CDATA #REQUIRED
+	taxaerro CDATA #REQUIRED>
+
+<!ELEMENT total EMPTY>
+<!ATTLIST total
+	comcache CDATA #REQUIRED
+	semcache CDATA #REQUIRED
+	ganho CDATA #REQUIRED>
